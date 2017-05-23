@@ -1,0 +1,40 @@
+---
+credentials:
+  description: "Array of credentials for cloud providers"
+  required: true
+  type: "array"
+  items:
+    type: "object"
+    required: true
+    properties:
+      api_key:
+        description: "Credentials for provider"
+        type: "string"
+        required: true
+      api_secret:
+        description: "Secret for provider"
+        type: "string"
+        required: true
+        secret: true
+      type:
+        description: "Provider type - e.g. compute, storage, dns"
+        type: "string"
+        required: true
+        enum:
+          - "compute"
+          - "storage"
+          - "dns"
+          - "loadbalancer"
+          - "container"
+      provider:
+        description: "Provider name - e.g. ec2_us_east, rackspace"
+        type: "string"
+        required: true
+      region:
+        description: "Provider region (if required)"
+        type: "string"
+        required: false
+      host:
+        description: "Provider host if required - e.g. for Kubernetes"
+        type: "string"
+        required: false
