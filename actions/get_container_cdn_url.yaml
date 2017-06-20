@@ -1,6 +1,6 @@
 ---
 name: get_container_cdn_url
-runner_type: run-python
+runner_type: python-script
 description: Retrieve CDN URL for existing CDN enabled container
 enabled: true
 entry_point: get_container_cdn_url.py

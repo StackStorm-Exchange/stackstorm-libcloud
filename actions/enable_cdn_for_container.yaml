@@ -1,6 +1,6 @@
 ---
 name: enable_cdn_for_container
-runner_type: run-python
+runner_type: python-script
 description: Enable CDN for container and return the CDN URL
 enabled: true
 entry_point: enable_cdn_for_container.py

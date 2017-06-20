@@ -1,6 +1,6 @@
 ---
 name: restart_container
-runner_type: run-python
+runner_type: python-script
 description: Restart a container.
 enabled: true
 entry_point: restart_container.py

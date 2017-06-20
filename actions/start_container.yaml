@@ -1,6 +1,6 @@
 ---
 name: start_container
-runner_type: run-python
+runner_type: python-script
 description: Start a container.
 enabled: true
 entry_point: start_container.py

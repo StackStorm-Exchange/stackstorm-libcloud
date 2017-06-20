@@ -1,6 +1,6 @@
 ---
 name: get_object_cdn_url
-runner_type: run-python
+runner_type: python-script
 description: Retrieve CDN URL for an object which is stored in a CDN enable container
 enabled: true
 entry_point: get_object_cdn_url.py

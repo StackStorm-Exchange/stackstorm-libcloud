@@ -1,6 +1,6 @@
 ---
 name: list_dns_records
-runner_type: run-python
+runner_type: python-script
 description: List available DNS records for a particular zone.
 enabled: true
 entry_point: list_dns_records.py

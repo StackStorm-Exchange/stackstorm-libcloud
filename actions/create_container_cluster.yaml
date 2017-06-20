@@ -1,6 +1,6 @@
 ---
 name: create_container_cluster
-runner_type: run-python
+runner_type: python-script
 description: Create a cluster container
 enabled: true
 entry_point: create_container_cluster.py

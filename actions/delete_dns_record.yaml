@@ -1,6 +1,6 @@
 ---
 name: delete_dns_record
-runner_type: run-python
+runner_type: python-script
 description: Delete an existing DNS record.
 enabled: true
 entry_point: delete_dns_record.py
