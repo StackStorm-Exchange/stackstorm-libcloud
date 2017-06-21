@@ -30,6 +30,10 @@ Example configuration:
       region: "iad"
 ```
 
+**Note** : When modifying the configuration in `/opt/stackstorm/configs/` please
+           remember to tell StackStorm to load these new values by running
+           `st2ctl reload --register-configs`
+
 ## Actions
 
 The following actions are supported:

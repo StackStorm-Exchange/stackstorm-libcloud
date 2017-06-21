@@ -1,6 +1,6 @@
 ---
 name: create_dns_record
-runner_type: run-python
+runner_type: python-script
 description: Create a new DNS record.
 enabled: true
 entry_point: create_dns_record.py
