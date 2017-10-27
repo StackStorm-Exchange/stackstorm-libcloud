@@ -15,7 +15,7 @@ from libcloud.compute.base import Node
 
 from libcloud_parsers import ResultSets
 
-from st2actions.runners.pythonrunner import Action
+from st2common.runners.base_action import Action
 
 __all__ = [
     'SingleVMAction',
