@@ -37,6 +37,10 @@ providers:
       description: "Provider region (if required)"
       type: "string"
       required: false
+    extra_kwargs:
+      description: "Additional keyword arguments passed to the driver constructor (e.g. 'project' for GCE, etc.)"
+      type: "object"
+      required: false
     host:
       description: "Provider host if required - e.g. for Kubernetes"
       type: "string"

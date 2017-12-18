@@ -28,6 +28,16 @@ Example configuration:
       type: "compute"
       provider: "rackspace"
       region: "iad"
+    gce:
+      api_key: "service account email"
+      api_secret: "path to pem file"
+      type: "compute"
+      provider: "gce"
+      # Arbitrary driver constructor arguments can be passed by utilizing extra_kwargs
+      # config option
+      extra_kwargs:
+        project: "your project id"
+        datacenter: "us-central1-a"
 ```
 
 **Note** : When modifying the configuration in `/opt/stackstorm/configs/` please
