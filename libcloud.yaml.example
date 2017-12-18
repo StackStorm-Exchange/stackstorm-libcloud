@@ -39,3 +39,11 @@
       type: "container"
       provider: "kubernetes"
       host: "12.34.56.67"
+    gce:
+      api_key: "service account email"
+      api_secret: "path to pem file"
+      type: "compute"
+      provider: "gce"
+      extra_kwargs:
+          project: "your project id"
+          datacenter: "us-central1-a"
