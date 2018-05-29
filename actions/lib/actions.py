@@ -64,9 +64,14 @@ class BaseAction(Action):
 
         cls = get_driver(provider_config['provider'])
 
-        driver_args = [provider_config['api_key'],
-                       provider_config['api_secret']]
+        driver_args = []
         driver_kwargs = {}
+
+        if provider_config.get('api_key', None):
+            driver_args.append(provider_config['api_key'])
+
+        if provider_config.get('api_secret', None):
+            driver_args.append(provider_config['api_secret'])
 
         if 'region' in provider_config:
             driver_kwargs['region'] = provider_config['region']

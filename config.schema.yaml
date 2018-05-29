@@ -9,15 +9,36 @@ credentials:
 
 providers:
   type: "object"
+  # Note: We require either api_key or api_secret or both. Some providers such as Vultr only take
+  # a single parameter (key / secret)
+  anyOf:
+    -
+      properties:
+        api_key:
+          required: true
+        api_secret:
+          required: true
+    -
+      properties:
+        api_key:
+          required: true
+        api_secret:
+          required: false
+    -
+      properties:
+        api_key:
+          required: false
+        api_secret:
+          required: true
   properties:
     api_key:
       description: "Credentials for provider"
       type: "string"
-      required: true
+      required: false
     api_secret:
       description: "Secret for provider"
       type: "string"
-      required: true
+      required: false
       secret: true
     type:
       description: "Provider type - e.g. compute, storage, dns"
