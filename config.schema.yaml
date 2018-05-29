@@ -27,9 +27,9 @@ providers:
     -
       properties:
         api_key:
-          required: true
-        api_secret:
           required: false
+        api_secret:
+          required: true
   properties:
     api_key:
       description: "Credentials for provider"
