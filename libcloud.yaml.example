@@ -27,6 +27,10 @@
       api_secret: "password"
       type: "compute"
       provider: "exoscale"
+    vultr_dev:
+      api_secret: "my-api-secret"
+      type: "compute"
+      provider: "vultr"
     aws_ecs:
       api_key: "username"
       api_secret: "blah blah"
