@@ -13,7 +13,7 @@ from libcloud.loadbalancer.providers import get_driver as get_lb_driver
 from libcloud.container.providers import get_driver as get_container_driver
 from libcloud.compute.base import Node
 
-from libcloud_parsers import ResultSets
+from lib.libcloud_parsers import ResultSets
 
 from st2common.runners.base_action import Action
 
