@@ -20,5 +20,8 @@ keywords:
   - gce
   - google compute engine
 version: 0.4.3
+python_versions:
+  - "2"
+  - "3"
 author : StackStorm, Inc.
 email : info@stackstorm.com
