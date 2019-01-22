@@ -112,8 +112,7 @@ jobs:
 
 workflows:
   version: 2
-  # Workflow which runs on each push
-  build_test_deploy_on_push:
+  build_test_deploy:
     jobs:
       - build_and_test_python27
       - build_and_test_python36
@@ -123,17 +122,3 @@ workflows:
           filters:
             branches:
               only: master
-  build_test_deploy_nightly:
-    jobs:
-      - build_and_test_python27
-      - build_and_test_python36
-    # Workflow which runs nightly - note we don't perform deploy job on nightly
-    # build
-    triggers:
-      # Run nightly build for the pack
-      - schedule:
-          cron: "*/5 * * * *"
-          filters:
-            branches:
-              only:
-                - master
