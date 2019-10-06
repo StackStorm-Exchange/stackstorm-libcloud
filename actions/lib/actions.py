@@ -89,7 +89,9 @@ class SingleVMAction(BaseAction):
         """
         Retrieve Libcloud node instance for the provided node id.
         """
-        if 'GCENodeDriver' in driver.__class__.__name__:
+        from libcloud.compute.drivers.gce import GCENodeDriver
+
+        if isinstance(driver, GCENodeDriver):
             # Special case for GCE driver which relies on "zone" attribute available in node
             # "extra" dictionary
             node = driver.ex_get_node(node_id)
