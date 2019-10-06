@@ -89,6 +89,13 @@ class SingleVMAction(BaseAction):
         """
         Retrieve Libcloud node instance for the provided node id.
         """
-        node = Node(id=node_id, name=None, state=None, public_ips=None,
-                    private_ips=None, driver=driver)
+        from libcloud.compute.drivers.gce import GCENodeDriver
+
+        if isinstance(driver, GCENodeDriver):
+            # Special case for GCE driver which relies on "zone" attribute available in node
+            # "extra" dictionary
+            node = driver.ex_get_node(node_id)
+        else:
+            node = Node(id=node_id, name=None, state=None, public_ips=None,
+                        private_ips=None, driver=driver)
         return node
