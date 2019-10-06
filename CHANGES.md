@@ -2,10 +2,10 @@
 
 # 0.5.0
 
-- Upgrade to apache-libcloud ``v2.6.0``.
+- Upgrade to apache-libcloud ``v2.6.0``. #8
 
 - Fix ``reboot_vm``, ``destroy_vm``, ``start_vm`` and other VM actions so they work correctly with
-  the Google Compute Engine (GCE) driver.
+  the Google Compute Engine (GCE) driver. #8
 
 # 0.4.3
 
