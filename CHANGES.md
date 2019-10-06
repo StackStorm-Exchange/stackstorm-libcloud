@@ -1,5 +1,12 @@
 # Changelog
 
+# 0.5.0
+
+- Upgrade to apache-libcloud ``v2.6.0``.
+
+- Fix ``reboot_vm``, ``destroy_vm``, ``start_vm`` and other VM actions so they work correctly with
+  the Google Compute Engine (GCE) driver.
+
 # 0.4.3
 
 - Update pack so it also works with providers such as Vultr which only take a single credential
