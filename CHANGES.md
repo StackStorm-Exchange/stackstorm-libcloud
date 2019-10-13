@@ -4,7 +4,7 @@
 
 - Add new ``extra_kwargs`` parameter to all the available actions. With this parameter, user
   can specify a list of arbitrary keyword arguments which will be passed to the underlying
-  Libcloud driver method.
+  Libcloud driver method. #9
 
 ## v0.5.0
 
