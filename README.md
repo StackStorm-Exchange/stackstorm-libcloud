@@ -92,3 +92,20 @@ The following actions are supported:
 * Start a container - ``start_container``
 * Stop a container - ``stop_container``
 * Restart a container - ``restart_container``
+
+## Passing Libcloud driver specific parameters to the action
+
+Version ``v0.6.0`` of this pack added support for new ``extra_kwargs`` parameter to all the pack
+actions.
+
+With this parameter, user can specify arbitrary dictionary of additional keyword arguments which
+are passed to the underlying Libcloud driver method.
+
+For example:
+
+```bash
+st2 run libcloud.destroy_vm credentials=gce_dev vm_id=12346, extra_kwargs='{"sync": false}'
+```
+
+Keep in mind that most of those custom arguments are driver specific so you should avoid them
+and only utilize standard parameters if you care about portability across multiple providers.

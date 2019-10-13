@@ -13,3 +13,7 @@ parameters:
     type: string
     description: ID of a container to destroy.
     required: true
+  extra_kwargs:
+    type: object
+    description: Additional keyword arguments which will be passed to the underlying Libcloud method.
+    required: false

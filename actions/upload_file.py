@@ -12,7 +12,8 @@ __all__ = [
 class UploadFileAction(BaseAction):
     api_type = 'storage'
 
-    def run(self, credentials, file_path, container_name, object_name=None):
+    def run(self, credentials, file_path, container_name, object_name=None, extra_kwargs=None):
+        extra_kwargs = extra_kwargs or {}
         driver = self._get_driver_for_credentials(credentials=credentials)
 
         try:
@@ -24,7 +25,7 @@ class UploadFileAction(BaseAction):
 
         object_name = object_name if object_name else os.path.basename(file_path)
         obj = driver.upload_object(file_path=file_path, container=container,
-                                   object_name=object_name)
+                                   object_name=object_name, **extra_kwargs)
 
         self.logger.info('Object successfully uploaded: %s' % (obj))
         return obj

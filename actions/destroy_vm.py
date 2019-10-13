@@ -8,12 +8,13 @@ __all__ = [
 class DestroyVMAction(SingleVMAction):
     api_type = 'compute'
 
-    def run(self, credentials, vm_id):
+    def run(self, credentials, vm_id, extra_kwargs=None):
+        extra_kwargs = extra_kwargs or {}
         driver = self._get_driver_for_credentials(credentials=credentials)
         node = self._get_node_for_id(node_id=vm_id, driver=driver)
 
         self.logger.info('Destroying node: %s...' % (node))
-        status = driver.destroy_node(node=node)
+        status = driver.destroy_node(node=node, **extra_kwargs)
 
         if status is True:
             self.logger.info('Successfully destroyed node "%s"' % (node))

@@ -12,7 +12,8 @@ class CreateVMAction(BaseAction):
     api_type = 'compute'
 
     def run(self, credentials, name, size_id=None, image_id=None, size_name=None, image_name=None,
-            location_id=None):
+            location_id=None, extra_kwargs=None):
+        extra_kwargs = extra_kwargs or {}
         driver = self._get_driver_for_credentials(credentials=credentials)
         location = NodeLocation(id=location_id, name=None,
                                 country=None, driver=driver)
@@ -40,6 +41,8 @@ class CreateVMAction(BaseAction):
 
         if location_id:
             kwargs['location'] = location
+
+        kwargs.update(extra_kwargs)
 
         self.logger.info('Creating node...')
 

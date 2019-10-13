@@ -28,3 +28,7 @@ parameters:
   location_id:
     type: string
     description: ID of a location to use
+  extra_kwargs:
+    type: object
+    description: Additional keyword arguments which will be passed to the underlying Libcloud method.
+    required: false
