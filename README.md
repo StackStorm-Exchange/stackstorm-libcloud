@@ -93,7 +93,7 @@ The following actions are supported:
 * Stop a container - ``stop_container``
 * Restart a container - ``restart_container``
 
-## Passing Libcloud driver specific parameters to the action
+## Passing driver specific arguments to the action
 
 Version ``v0.6.0`` of this pack added support for new ``extra_kwargs`` parameter to all the pack
 actions.
