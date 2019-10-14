@@ -11,13 +11,14 @@ __all__ = [
 class DeleteDNSRecordAction(BaseAction):
     api_type = 'dns'
 
-    def run(self, credentials, zone_id, record_id):
+    def run(self, credentials, zone_id, record_id, extra_kwargs=None):
+        extra_kwargs = extra_kwargs or {}
         driver = self._get_driver_for_credentials(credentials=credentials)
         zone = Zone(id=zone_id, domain=None, type=None, ttl=None, driver=driver)
         record = Record(id=record_id, name=None, type=None, data=None,
                         zone=zone, driver=driver)
 
-        status = driver.delete_record(record=record)
+        status = driver.delete_record(record=record, **extra_kwargs)
 
         if status:
             self.logger.info('Successfully deleted record')

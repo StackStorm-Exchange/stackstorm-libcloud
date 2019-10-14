@@ -11,7 +11,8 @@ class DeployContainerAction(BaseAction):
     api_type = 'container'
 
     def run(self, credentials, name, repository_name, tag,
-            start, cluster_id=None, parameters=None):
+            start, cluster_id=None, parameters=None, extra_kwargs=None):
+        extra_kwargs = extra_kwargs or {}
         driver = self._get_driver_for_credentials(credentials=credentials)
         hub_client = HubClient()
         image = hub_client.get_image(repository_name, tag)
@@ -21,5 +22,5 @@ class DeployContainerAction(BaseAction):
             cluster = None
         record = driver.deploy_container(name=name, image=image,
                                          start=start, cluster=cluster,
-                                         parameters=parameters)
+                                         parameters=parameters, **extra_kwargs)
         return self.resultsets.formatter(record)

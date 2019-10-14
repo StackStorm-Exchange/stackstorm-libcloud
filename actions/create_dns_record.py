@@ -8,7 +8,9 @@ __all__ = [
 class CreateDNSRecordAction(BaseAction):
     api_type = 'dns'
 
-    def run(self, credentials, domain, name, type, data, ttl=500):
+    def run(self, credentials, domain, name, type, data, ttl=500,
+            extra_kwargs=None):
+        extra_kwargs = extra_kwargs or {}
         driver = self._get_driver_for_credentials(credentials=credentials)
         zones = driver.list_zones()
 
@@ -20,7 +22,8 @@ class CreateDNSRecordAction(BaseAction):
         extra = {'ttl': int(ttl)}
         record = driver.create_record(name=name, zone=zone,
                                       type=type,
-                                      data=data, extra=extra)
+                                      data=data, extra=extra,
+                                      **extra_kwargs)
 
         self.logger.info('Successfully created record "%s"' % (record.name))
         return record

@@ -26,3 +26,7 @@ parameters:
     description: The algorithm of the balancer, choice of LEAST_CONNECTIONS, ROUND_ROBIN, SHORTEST_RESPONSE, PERSISTENT_IP
     required: false
     default: "ROUND_ROBIN"
+  extra_kwargs:
+    type: object
+    description: Additional keyword arguments which will be passed to the underlying Libcloud method.
+    required: false

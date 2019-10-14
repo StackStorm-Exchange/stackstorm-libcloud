@@ -11,7 +11,8 @@ class CreateBalancerAction(BaseAction):
     api_type = 'loadbalancer'
 
     def run(self, credentials, name, port, protocol,
-            algorithm=Algorithm.ROUND_ROBIN):
+            algorithm=Algorithm.ROUND_ROBIN, extra_kwargs=None):
+        extra_kwargs = extra_kwargs or {}
         driver = self._get_driver_for_credentials(credentials=credentials)
 
         # Use a local lookup - these maps are protected fields of each driver
@@ -29,5 +30,6 @@ class CreateBalancerAction(BaseAction):
                                         port=port,
                                         protocol=protocol,
                                         algorithm=algorithm,
-                                        members=None)
+                                        members=None,
+                                        **extra_kwargs)
         return self.resultsets.formatter(record)

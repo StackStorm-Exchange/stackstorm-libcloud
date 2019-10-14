@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.6.0
+
+- Add new ``extra_kwargs`` parameter to all the available actions. With this parameter, user
+  can specify a list of arbitrary keyword arguments which will be passed to the underlying
+  Libcloud driver method. #9
+
 ## v0.5.0
 
 - Upgrade to apache-libcloud ``v2.6.0``. #8
