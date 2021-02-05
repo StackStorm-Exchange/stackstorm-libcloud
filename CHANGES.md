@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.0
+
+* Drop Python 2.7 support
+
 ## v0.6.0
 
 - Add new ``extra_kwargs`` parameter to all the available actions. With this parameter, user
